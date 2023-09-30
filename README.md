@@ -1,4 +1,4 @@
-## SQLite Lab
+## SQLite Lab - DE Week-5 Mini-project
 Forked on 29-Sep-2023
 ### Lab:
 
