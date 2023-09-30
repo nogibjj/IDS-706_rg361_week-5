@@ -1,4 +1,6 @@
 ## SQLite Lab - DE Week-5 Mini-project
+[![CI/CD](https://github.com/nogibjj/IDS-706_rg361_week-5/actions/workflows/cicd.yml/badge.svg)](https://github.com/nogibjj/IDS-706_rg361_week-5/actions/workflows/cicd.yml)
+
 Forked on 29-Sep-2023
 ### Lab:
 
