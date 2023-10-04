@@ -12,6 +12,8 @@ def read_db(db_name="Master.db", table_name="Master", query=None):
     c = conn.cursor()
     if query==None:
         query = "SELECT * FROM "+table_name +" LIMIT 5;"
+    if not query.lower().startswith("select"):
+        return "Invalid Query, Read operations should start with SELECT"
 
     try:
         c.execute(query)
