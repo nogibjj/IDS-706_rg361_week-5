@@ -4,16 +4,16 @@ Query Scripts Using SQLite and Python which can be exceuted via CLI
 
 # Import libraries
 import sys
-sys.path.insert(0, "./mylib")
 import argparse
 
+sys.path.insert(0, "./mylib")
 
 # Import Custom Libraries functions
-#from mylib.data_csv import create_data, delete_data
-from mylib.create import create_db
-from mylib.read import read_db
-from mylib.update import update_db
-from mylib.delete import delete_record
+# from mylib.data_csv import create_data, delete_data
+from mylib.create import create_db  # noqa: E402
+from mylib.read import read_db  # noqa: E402
+from mylib.update import update_db  # noqa: E402
+from mylib.delete import delete_record  # noqa: E402
 
 
 def handle_arguments(args):
@@ -31,14 +31,14 @@ def handle_arguments(args):
     args = parser.parse_args(args[:1])
     print(args.action)
     if args.action == "create":
-        parser.add_argument("db_name",type=str, nargs='?', default="Master.db")
-        parser.add_argument("dataset_name",type=str, nargs='?', default="Master.csv")
-        parser.add_argument("auto",type=str, nargs='?', default="True")
+        parser.add_argument("db_name", type=str, nargs="?", default="Master.db")
+        parser.add_argument("dataset_name", type=str, nargs="?", default="Master.csv")
+        parser.add_argument("auto", type=str, nargs="?", default="True")
 
     elif args.action in ["read", "update", "delete"]:
-        parser.add_argument("db_name",type=str, nargs='?',default="Master.db")
-        parser.add_argument("table_name",type=str, nargs='?',default="Master")
-        parser.add_argument("query",type=str, nargs='?',default=None)
+        parser.add_argument("db_name", type=str, nargs="?", default="Master.db")
+        parser.add_argument("table_name", type=str, nargs="?", default="Master")
+        parser.add_argument("query", type=str, nargs="?", default=None)
 
     # parse again with ever
     return parser.parse_args(sys.argv[1:])

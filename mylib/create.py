@@ -3,7 +3,6 @@ Creates a new Sqlite3 Database by reading the CSV Data
 """
 import sqlite3
 import csv
-import os
 from logs import write_log
 
 
