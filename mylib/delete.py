@@ -11,7 +11,7 @@ def delete_record(db_name="Master.db", table_name="Master", query=None):
     """
     conn = sqlite3.connect(db_name)
     c = conn.cursor()
-    if query == None:
+    if query is None:
         query = """DELETE FROM """ + table_name + """ WHERE "id" IS 1;"""
 
     if not query.lower().startswith("delete"):

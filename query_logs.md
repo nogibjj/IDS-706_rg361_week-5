@@ -58,3 +58,10 @@ SELECT * FROM Master LIMIT 5;
 ```
 
 
+04-Oct-2023 05:56 (UTC):
+```sql
+UPDATE MasterSET "normalized_losses" = 'Unknown' 
+            WHERE "normalized_losses" IS "?";
+```
+
+

@@ -12,7 +12,7 @@ def read_db(db_name="Master.db", table_name="Master", query=None):
     """
     conn = sqlite3.connect(db_name)
     c = conn.cursor()
-    if query == None:
+    if query is None:
         query = "SELECT * FROM " + table_name + " LIMIT 5;"
     if not query.lower().startswith("select"):
         return "Invalid Query, Read operations should start with SELECT"

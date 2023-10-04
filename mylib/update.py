@@ -11,11 +11,12 @@ def update_db(db_name="Master.db", table_name="Master", query=None):
     """
     conn = sqlite3.connect(db_name)
     c = conn.cursor()
-    if query == None:
+    if query is None:
         query = (
             """UPDATE """
             + table_name
-            + """ SET "normalized_losses" = 'Unknown' WHERE "normalized_losses" IS "?";"""
+            + """SET "normalized_losses" = 'Unknown' 
+            WHERE "normalized_losses" IS "?";"""
         )
 
     if not query.lower().startswith(("update", "insert")):
