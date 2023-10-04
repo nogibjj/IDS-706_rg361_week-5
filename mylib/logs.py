@@ -25,6 +25,7 @@ def clear_log(log_file="./query_logs.md"):
     open(log_file, "w").close()
     pass
 
+
 if __name__ == "__main__":
     write_log("testing log file")
     clear_log()
