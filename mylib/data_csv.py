@@ -5,7 +5,7 @@ Module to Get data from links and save as csv file locally and delete them if re
 import requests
 import os
 
-def create_data(source="https://raw.githubusercontent.com/Barabasi-Lab/GroceryDB/main/data/GroceryDB_IgFPro.csv", 
+def create_data(source="https://github.com/Opensourcefordatascience/Data-sets/raw/master/automotive_data.csv", 
             file_name="Master.csv", auto=True):
     """"Extract a url to a file path"""
     if auto:
@@ -29,5 +29,5 @@ def delete_data(file_name="Master.csv", auto=True):
     pass
 
 if __name__ == "__main__":
-    delete_data()
+    create_data()
     pass
