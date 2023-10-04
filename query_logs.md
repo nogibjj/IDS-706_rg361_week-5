@@ -46,3 +46,15 @@ SELECT * FROM Master LIMIT 5;
 ```
 
 
+04-Oct-2023 05:52 (UTC):
+```sql
+DELETE FROM Master WHERE "id" IS 1;
+```
+
+
+04-Oct-2023 05:52 (UTC):
+```sql
+SELECT * FROM Master LIMIT 5;
+```
+
+
