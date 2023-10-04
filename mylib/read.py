@@ -3,6 +3,7 @@ File to read data from a DB
 """
 
 import sqlite3
+from logs import write_log
 
 def read_db(db_name="Master.db", table_name="Master", query=None):
     """
@@ -21,6 +22,7 @@ def read_db(db_name="Master.db", table_name="Master", query=None):
     except Exception:
         payload = "Invalid Query"
     conn.close()
+    write_log(query)
     return payload
 
 if __name__ == "__main__":
