@@ -5,7 +5,7 @@ import sqlite3
 import csv
 import os
 
-def create(db_name="Master.db", dataset="Master.csv", auto=True):
+def create(db_name='Master.db', dataset="Master.csv", auto=True):
     
     #prints the full working directory and path
     print(os.getcwd())
@@ -21,20 +21,22 @@ def create(db_name="Master.db", dataset="Master.csv", auto=True):
     for i in header:
         col_names += i + ", "
     col_names = col_names[:-2]
+    col_names = col_names.replace("-", "_")
     col_holder = "("+ ("?,"*len(header))[:-1]+")"
 
-    #c.execute("DROP TABLE IF EXISTS {}".format(db_name))
+    c.execute("DROP TABLE IF EXISTS Master")
 
-    create_query = "CREATE TABLE MasterDB ("+col_names+")"
-    print(create_query)
+    create_query = "CREATE TABLE Master ("+col_names+")"
     
-    # c.execute("CREATE TABLE MasterDB ("+col_names+")")
+    c.execute(create_query)
 
-    # #insert
-    # c.executemany("INSERT INTO GroceryDB VALUES (?,?, ?, ?, ?, ?, ?, ?, ?)", payload)
-    # conn.commit()
-    # conn.close()
-    # return "GroceryDB.db"
+    
+    #insert
+    insert_query = "INSERT INTO Master VALUES "+col_holder
+    c.executemany(insert_query, payload)
+    conn.commit()
+    conn.close()
+    pass
 
 if __name__ == "__main__":
     create()
