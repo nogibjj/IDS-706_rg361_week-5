@@ -22,9 +22,7 @@ def clear_log(log_file="./query_logs.md"):
     """
     To clear the query logs from the log file
     """
-    with open(log_file, "w") as file:
-        file.write("")
-        file.close()
+    open(log_file, "w").close()
     pass
 
 if __name__ == "__main__":
