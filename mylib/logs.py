@@ -29,4 +29,5 @@ def clear_log(log_file="./query_logs.md"):
 
 if __name__ == "__main__":
     write_log("testing log file")
+    clear_log()
     pass

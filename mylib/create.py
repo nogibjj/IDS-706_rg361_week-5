@@ -4,6 +4,7 @@ Creates a new Sqlite3 Database by reading the CSV Data
 import sqlite3
 import csv
 import os
+from logs import write_log
 
 def create(db_name='Master.db', dataset="Master.csv", auto=True):
     
@@ -31,16 +32,17 @@ def create(db_name='Master.db', dataset="Master.csv", auto=True):
     c = conn.cursor()
     c.execute("DROP TABLE IF EXISTS Master")
 
-    create_query = "CREATE TABLE Master ("+col_names+")"
+    create_query = "CREATE TABLE Master (id INTEGER PRIMARY KEY AUTOINCREMENT,"+col_names+")"
     
     c.execute(create_query)
-
+    write_log(create_query)
     
     #insert
-    insert_query = "INSERT INTO Master VALUES "+col_holder
+    insert_query = "INSERT INTO Master("+col_names+")"+" VALUES "+col_holder
     c.executemany(insert_query, payload)
     conn.commit()
     conn.close()
+    write_log(insert_query)
     pass
 
 if __name__ == "__main__":
