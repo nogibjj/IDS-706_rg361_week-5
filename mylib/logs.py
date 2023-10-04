@@ -12,7 +12,7 @@ def write_log(query, log_file="./query_logs.md"):
     dt_string = now.strftime("%d-%b-%Y %H:%M") + " (UTC)"
 
     with open(log_file, "a") as file:
-        file.write("{} : {}".format(dt_string, query))
+        file.write(f"{dt_string}:\n```sql\n{query}\n```\n\n")
         file.write("\n")
         file.close()
     pass
@@ -29,5 +29,4 @@ def clear_log(log_file="./query_logs.md"):
 
 if __name__ == "__main__":
     write_log("testing log file")
-    clear_log()
     pass
