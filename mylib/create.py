@@ -1,22 +1,41 @@
 """
-Creates a new Sqlite3 Database by reading the CSV Data from the link
+Creates a new Sqlite3 Database by reading the CSV Data
 """
 import sqlite3
 import csv
 import os
 
-def create(db_name="Master.db", dataset="https://github.com/Opensourcefordatascience/Data-sets/raw/master/automotive_data.csv"):
+def create(db_name="Master.db", dataset="Master.csv", auto=True):
     
     #prints the full working directory and path
     print(os.getcwd())
+    if auto:
+        dataset = "./Data/{}".format(dataset)
     payload = csv.reader(open(dataset, newline=''), delimiter=',')
     conn = sqlite3.connect(db_name)
     c = conn.cursor()
-    c.execute("DROP TABLE IF EXISTS {}".format(db_name))
-    header = payload[0]
-    c.execute("CREATE TABLE GroceryDB (id,general_name, count_products, ingred_FPro, avg_FPro_products, avg_distance_root, ingred_normalization_term, semantic_tree_name, semantic_tree_node)")
-    #insert
-    c.executemany("INSERT INTO GroceryDB VALUES (?,?, ?, ?, ?, ?, ?, ?, ?)", payload)
-    conn.commit()
-    conn.close()
-    return "GroceryDB.db"
+    for row in payload:
+        header = row
+        break
+    col_names = ""
+    for i in header:
+        col_names += i + ", "
+    col_names = col_names[:-2]
+    col_holder = "("+ ("?,"*len(header))[:-1]+")"
+
+    #c.execute("DROP TABLE IF EXISTS {}".format(db_name))
+
+    create_query = "CREATE TABLE MasterDB ("+col_names+")"
+    print(create_query)
+    
+    # c.execute("CREATE TABLE MasterDB ("+col_names+")")
+
+    # #insert
+    # c.executemany("INSERT INTO GroceryDB VALUES (?,?, ?, ?, ?, ?, ?, ?, ?)", payload)
+    # conn.commit()
+    # conn.close()
+    # return "GroceryDB.db"
+
+if __name__ == "__main__":
+    create()
+    pass
