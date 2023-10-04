@@ -11,9 +11,11 @@ def create(db_name='Master.db', dataset="Master.csv", auto=True):
     print(os.getcwd())
     if auto:
         dataset = "./Data/{}".format(dataset)
+
+    #read csv
     payload = csv.reader(open(dataset, newline=''), delimiter=',')
-    conn = sqlite3.connect(db_name)
-    c = conn.cursor()
+    
+    #create dynaic headers to use in query
     for row in payload:
         header = row
         break
@@ -24,6 +26,9 @@ def create(db_name='Master.db', dataset="Master.csv", auto=True):
     col_names = col_names.replace("-", "_")
     col_holder = "("+ ("?,"*len(header))[:-1]+")"
 
+    #write to DB
+    conn = sqlite3.connect(db_name)
+    c = conn.cursor()
     c.execute("DROP TABLE IF EXISTS Master")
 
     create_query = "CREATE TABLE Master ("+col_names+")"
