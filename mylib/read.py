@@ -21,6 +21,7 @@ def read_db(db_name="Master.db", table_name="Master", query=None):
         payload = c.fetchall()
     except Exception:
         payload = "Invalid Query"
+    conn.commit()
     conn.close()
     write_log(query)
     return payload
