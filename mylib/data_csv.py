@@ -17,7 +17,6 @@ def create_data(
     else:
         filepath = file_name
 
-    print(filepath)
     with requests.get(source) as r:
         with open(filepath, "wb") as f:
             f.write(r.content)

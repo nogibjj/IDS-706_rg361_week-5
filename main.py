@@ -9,7 +9,7 @@ import argparse
 sys.path.insert(0, "./mylib")
 
 # Import Custom Libraries functions
-# from mylib.data_csv import create_data, delete_data
+from mylib.data_csv import create_data, delete_data  # noqa: E402
 from mylib.create import create_db  # noqa: E402
 from mylib.read import read_db  # noqa: E402
 from mylib.update import update_db  # noqa: E402
@@ -21,24 +21,31 @@ def handle_arguments(args):
     parser = argparse.ArgumentParser(description="CRUD Operations on SQLite DB")
     parser.add_argument(
         "action",
-        choices=[
-            "create",
-            "read",
-            "update",
-            "delete",
-        ],
+        choices=["create", "read", "update", "delete", "create_data", "delete_data"],
     )
     args = parser.parse_args(args[:1])
     print(args.action)
     if args.action == "create":
         parser.add_argument("db_name", type=str, nargs="?", default="Master.db")
         parser.add_argument("dataset_name", type=str, nargs="?", default="Master.csv")
-        parser.add_argument("auto", type=str, nargs="?", default="True")
+        parser.add_argument("auto", type=bool, nargs="?", default="True")
 
     elif args.action in ["read", "update", "delete"]:
         parser.add_argument("db_name", type=str, nargs="?", default="Master.db")
         parser.add_argument("table_name", type=str, nargs="?", default="Master")
         parser.add_argument("query", type=str, nargs="?", default=None)
+    elif args.action == "create_data":
+        parser.add_argument(
+            "source",
+            type=str,
+            nargs="?",
+            default="https://github.com/Opensourcefordatascience/Data-sets/raw/master/automotive_data.csv",
+        )
+        parser.add_argument("file_name", type=str, nargs="?", default="Master.csv")
+        parser.add_argument("auto", type=bool, nargs="?", default="True")
+    elif args.action == "delete_data":
+        parser.add_argument("file_name", type=str, nargs="?", default="Master.csv")
+        parser.add_argument("auto", type=bool, nargs="?", default="True")
 
     # parse again with ever
     return parser.parse_args(sys.argv[1:])
@@ -64,6 +71,14 @@ def main():
     elif args.action == "delete":
         print("processing...")
         print(delete_record(args.db_name, args.table_name, args.query))
+        print("processed")
+    elif args.action == "create_data":
+        print("processing...")
+        create_data(args.source, args.file_name, args.auto)
+        print("processed")
+    elif args.action == "delete_data":
+        print("processing...")
+        delete_data(args.file_name, args.auto)
         print("processed")
     else:
         print(f"Unknown Input: {args.action}")
