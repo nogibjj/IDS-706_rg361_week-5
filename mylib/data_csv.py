@@ -9,10 +9,10 @@ import os
 def create_data(
     source="https://github.com/Opensourcefordatascience/Data-sets/raw/master/automotive_data.csv",
     file_name="Master.csv",
-    auto=True,
+    auto="T",
 ):
     """ "Extract a url to a file path"""
-    if auto:
+    if auto in ["T", "t"]:
         filepath = "./Data/{}".format(file_name)
     else:
         filepath = file_name
@@ -23,10 +23,10 @@ def create_data(
     pass
 
 
-def delete_data(file_name="Master.csv", auto=True):
+def delete_data(file_name="Master.csv", auto="T"):
     """ "Delete a file path"""
-    if auto:
-        file_path = "Data/{}".format(file_name)
+    if auto in ["T", "t"]:
+        file_path = "./Data/{}".format(file_name)
     else:
         file_path = file_name
     os.remove(file_path)

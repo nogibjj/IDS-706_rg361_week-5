@@ -6,8 +6,8 @@ import csv
 from logs import write_log
 
 
-def create_db(db_name="Master.db", dataset="Master.csv", auto=True):
-    if auto:
+def create_db(db_name="Master.db", dataset="Master.csv", auto="T"):
+    if auto in ["T", "t"]:
         dataset = "./Data/{}".format(dataset)
 
     # read csv
