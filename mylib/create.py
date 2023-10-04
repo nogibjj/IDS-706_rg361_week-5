@@ -7,9 +7,7 @@ import os
 from logs import write_log
 
 
-def create(db_name="Master.db", dataset="Master.csv", auto=True):
-    # prints the full working directory and path
-    print(os.getcwd())
+def create_db(db_name="Master.db", dataset="Master.csv", auto=True):
     if auto:
         dataset = "./Data/{}".format(dataset)
 
@@ -49,5 +47,5 @@ def create(db_name="Master.db", dataset="Master.csv", auto=True):
 
 
 if __name__ == "__main__":
-    create()
+    create_db()
     pass
