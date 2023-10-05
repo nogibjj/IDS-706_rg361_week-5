@@ -32,22 +32,22 @@ python main.py command args
 the possible commands and their relevant arguments are:
 1. ``create``: To crete a Table in a SQLite DB by reading the information from the specified CSV file.<br>Args: (db_name, dataset, auto)
 2. ``read``: To run a SQLite READ query entered by the user and return the output.<br>Args: (db_name, table_name, query)
-3. ``update``: To run a SQLite UPDATE query entered by the user. Args: (db_name, table_name, query)
-4. ``delete``: To run a SQLite DELETE query entered by the user. Args (db_name, table_name, query)
-5. ``create_data``: To create CSV file in the ``Data`` folder from the given source. Args (source, file_name, auto)
-6. ``delete_data``: To delete the CSV file. Args (file_name, auto)
-7. ``clear_log``: To clear the query_logs file. Args (log_file)
+3. ``update``: To run a SQLite UPDATE query entered by the user.<br>Args: (db_name, table_name, query)
+4. ``delete``: To run a SQLite DELETE query entered by the user.<br>Args: (db_name, table_name, query)
+5. ``create_data``: To create CSV file in the ``Data`` folder from the given source.<br>Args: (source, file_name, auto)
+6. ``delete_data``: To delete the CSV file.<br>Args: (file_name, auto)
+7. ``clear_log``: To clear the query_logs file.<br>Args: (log_file)
 
 **Notes:** 
 - All the arguments to the commands are optional as default values are set in the functions.
 - The "auto" argument specfies to the function if the user is directly providing the full path (F) or wants the funtion to use the default path (T). Default value for auto is T
 
 ## Sample Execution and Test
-  **Sample Execution:** a read command is used without any arguments, so the first 5 rows of the default Database and Table are returned as expected
+  **Sample Execution:** a read command is used without any arguments, so the first 5 rows of the default Database and Table are returned as expected:
 
    ![Sample_Execution](resources/sample_execution.png)
 
-**Testing:** Make Test command is run to verify all functionalities are working as expected and to see if the CRUD actions are being performed.
+**Testing:** "make test" command is run to verify all functionalities are working as expected and to see if the CRUD actions are being performed.
 
 **Note:** Coverage is intentioanlly not kept at 100% as we do not call the clear_log funtion which would clear the logs.
 
@@ -57,7 +57,7 @@ the possible commands and their relevant arguments are:
 ## Contents
 
 ### 1. query_logs
-  Whenever a  CRUD operation is performed the query is automatically logged in the query_logs file with the timestamp for future reference and use. The log file can be cleared using the ``clear_log`` command
+  Whenever a  CRUD operation is performed, the query is automatically logged in the query_logs file with the timestamp for future reference and use. The log file can be cleared using the ``clear_log`` command
 
 ### 2. README.md
    contains the information about the repository and instructions for using it
@@ -66,7 +66,7 @@ the possible commands and their relevant arguments are:
    contains the list of packages and libraries which are required for running the project. These are intalled and used in the virtual environment and Github actions.
    
 ### 4. .github/workflows
-   github actions are used to automate the following actions whenever a change is made to the files in the repository:
+   github actions are used to automate the following processes whenever a change is made to the files in the repository:
    - ``install`` : installs the packages and libraries mentioned in the requirements.txt
    - ``test`` : uses ``pytest`` to test the python script and jupyter notebook
       
