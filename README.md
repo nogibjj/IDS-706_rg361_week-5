@@ -22,7 +22,9 @@ The repositoty automatically **``logs``** all the queries which are executed in 
 
 Create a Codespace on main which will initialize the enviroment with the required packages and settings to execute the codes.
 
-The ``main.py`` file accepts the commands via ``CLI``, the commands are of the form:
+The ``main.py`` file accepts the commands via ``CLI``, the CLI are of the form:
 
-```code action arguments```
+```console
+python main.py command args
+```
 
