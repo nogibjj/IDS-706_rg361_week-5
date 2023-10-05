@@ -29,10 +29,10 @@ The ``main.py`` file accepts the commands via ``CLI``, the CLI are of the form:
 ```console
 python main.py command args
 ```
-the possible commands and their relevanth arguments are:
-1. ``create``: To crete a Table in a SQLite DB by reading the information from the specified CSV file Args: (db_name, dataset, auto)
-2. ``read``: To run a SQLite READ query entered by the user and return the output. Args (db_name, table_name, query)
-3. ``update``: To run a SQLite UPDATE query entered by the user. Args (db_name, table_name, query)
+the possible commands and their relevant arguments are:
+1. ``create``: To crete a Table in a SQLite DB by reading the information from the specified CSV file.<br>Args: (db_name, dataset, auto)
+2. ``read``: To run a SQLite READ query entered by the user and return the output.<br>Args: (db_name, table_name, query)
+3. ``update``: To run a SQLite UPDATE query entered by the user. Args: (db_name, table_name, query)
 4. ``delete``: To run a SQLite DELETE query entered by the user. Args (db_name, table_name, query)
 5. ``create_data``: To create CSV file in the ``Data`` folder from the given source. Args (source, file_name, auto)
 6. ``delete_data``: To delete the CSV file. Args (file_name, auto)
