@@ -4,6 +4,8 @@
 
 This repositroy contains files to perform CRUD (Create-Write-Update-Delete) operations in a ``SQLite`` Database using ``Python`` and ``CLI``
 
+All the CRUD operations are automatically ``logged`` in the ``query_logs`` file.
+
 The base repo has been forked from [sqlite-lab](https://github.com/nogibjj/sqlite-lab) and modified as per requirements.
 
 Forked on on 29-Sep-2023
@@ -12,7 +14,7 @@ Forked on on 29-Sep-2023
 
 The repository has the ``main.py`` file which makes use of the files in the mylib folder to perform CRUD operations on a SQLite Database. The main.py file can be interacted via ``CLI`` (Command Line Interface) by the user.
 
-The repositoty automatically **``logs``** all the queries which are executed in the ``query_logs`` file.
+The repository automatically **``logs``** all the queries which are executed in the ``query_logs`` file.
 
 ``Github`` actions automatically runs the ``test_main.py`` which triggers the CRUD operations and logs them whenever there is an update in the repository.
 
