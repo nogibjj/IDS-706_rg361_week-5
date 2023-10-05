@@ -14,5 +14,7 @@ The repository has the ``main.py`` file which makes use of the files in the myli
 
 The repositoty automatically **``logs``** all the queries which are executed in the ``query_logs`` file.
 
+``Github`` actions automatically runs the ``test_main.py`` whenever there is an update in the repository which automatically performs all the default operations. 
+
 ![Schema](resources/schema.png)
 
