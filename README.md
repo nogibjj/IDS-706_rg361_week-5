@@ -12,7 +12,7 @@ Forked on on 29-Sep-2023
 
 The repository has the ``main.py`` file which makes use of the files in the mylib folder to perform CRUD operations on a SQLite Database. The main.py file can be interacted via ``CLI`` (Command Line Interface) by the user.
 
-The repositoty automatically ``**logs**`` all the queries which are executed in the ``query_logs`` file.
+The repositoty automatically **``logs``** all the queries which are executed in the ``query_logs`` file.
 
 ![Schema](resources/schema.png)
 
