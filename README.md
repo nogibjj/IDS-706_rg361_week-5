@@ -1,16 +1,20 @@
-## SQLite Lab - DE Week-5 Mini-project
-[![CI/CD](https://github.com/nogibjj/IDS-706_rg361_week-5/actions/workflows/cicd.yml/badge.svg)](https://github.com/nogibjj/IDS-706_rg361_week-5/actions/workflows/cicd.yml)
+# CRUD Operations in SQLite DB using Python and CLI
 
-Forked on 29-Sep-2023
-### Lab:
+[![CI](https://github.com/nogibjj/IDS-706_rg361_week-5/actions/workflows/cicd.yml/badge.svg)](https://github.com/nogibjj/IDS-706_rg361_week-5/actions/workflows/cicd.yml)
 
-* Use an AI Assistant, but use a different one then you used from a previous lab (Anthropic's Claud, Bard, Copilot, CodeWhisperer, Colab AI, etc)
-* ETL-Query:  [E] Extract a dataset from URL, [T] Transform, [L] Load into SQLite Database and [Q] Query
-For the ETL-Query lab:
-* [E] Extract a dataset from a URL like Kaggle or data.gov. JSON or CSV formats tend to work well.
-* [T] Transform the data by cleaning, filtering, enriching, etc to get it ready for analysis.
-* [L] Load the transformed data into a SQLite database table using Python's sqlite3 module.
-* [Q] Write and execute SQL queries on the SQLite database to analyze and retrieve insights from the data.
+This repositroy contains files to perform CRUD (Create-Write-Update-Delete) operations in a ``SQLite`` Database using ``Python`` and ``CLI``
+
+The base repo has been forked from [sqlite-lab](https://github.com/nogibjj/sqlite-lab) and modified as per requirements.
+
+Forked on on 29-Sep-2023
+
+## Overview
+
+The repository has the ``main.py`` file which makes use of the files in the mylib folder to perform CRUD operations on a SQLite Database. The main.py file can be interacted via ``CLI`` (Command Line Interface) by the user.
+
+The repositoty automatically ``**logs**`` all the queries which are executed in the ``query_logs`` file.
+
+[!Schema](resources/schema.png)
 
 #### Tasks:
 
