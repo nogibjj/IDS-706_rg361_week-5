@@ -14,7 +14,15 @@ The repository has the ``main.py`` file which makes use of the files in the myli
 
 The repositoty automatically **``logs``** all the queries which are executed in the ``query_logs`` file.
 
-``Github`` actions automatically runs the ``test_main.py`` whenever there is an update in the repository which automatically performs all the default operations. 
+``Github`` actions automatically runs the ``test_main.py`` which triggers the CRUD operations and logs them whenever there is an update in the repository.
 
 ![Schema](resources/schema.png)
+
+## Instructions
+
+Create a Codespace on main which will initialize the enviroment with the required packages and settings to execute the codes.
+
+The ``main.py`` file accepts the commands via ``CLI``, the commands are of the form:
+
+```code action arguments```
 
